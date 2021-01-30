@@ -2,7 +2,7 @@
  * @Description: interfaces needed in navbar
  * @Author: Wang Wenzheng
  * @Date: 2021-01-28 19:33:38
- * @LastEditTime: 2021-01-29 00:56:39
+ * @LastEditTime: 2021-01-29 15:44:06
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\components\Navbar\NavbarInterface.tsx
  */
@@ -16,7 +16,9 @@ interface Logo {
 }
 interface Title {
   content: string;
-  style: object;
+  style: {
+    fontSize: string;
+  };
 }
 
 export interface NavbarInfo {

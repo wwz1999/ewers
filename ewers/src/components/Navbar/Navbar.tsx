@@ -2,7 +2,7 @@
  * @Description: the nav of the SPA
  * @Author: Wang Wenzheng
  * @Date: 2021-01-23 12:43:16
- * @LastEditTime: 2021-01-29 02:15:54
+ * @LastEditTime: 2021-01-29 23:41:45
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\components\Navbar\Navbar.tsx
  */
@@ -12,15 +12,9 @@ import { Component } from "react";
 
 import styled from "styled-components";
 import { LinkMenu } from "../Menu/LinkMenu";
+import { LinkMenuItem, LinkMenuItemStyle } from "../Menu/LinkMenuInterface";
 //import data structure
 import { NavbarInfo } from "./NavbarInterface";
-
-//style of the navbar
-const NavbarContainer = styled.div`
-  background: #f03726;
-  color: #ffffff;
-  margin: 0 0 16px 0;
-`;
 
 //needed info of the navbar
 const navInfo: NavbarInfo = {
@@ -33,11 +27,9 @@ const navInfo: NavbarInfo = {
   },
   //* attributes of title
   title: {
-    content: "TITLE",
+    content: "求大佬带",
     style: {
-      fontSize: "40px",
-      verticalAlign: "middle",
-      display: "table-cell",
+      fontSize: "2.5rem",
     },
   },
   //* attributes of sublinks
@@ -46,27 +38,29 @@ const navInfo: NavbarInfo = {
       fontColor: "#000000",
       fontSize: "16px",
       textAlign: "right",
+      padding: "0.125rem 1rem",
     },
     items: [
       {
-        title: "title1",
-        url: "/",
+        title: "个人中心",
+        url: "/personalpage",
       },
       {
-        title: "title2",
-        url: "/personalpage",
+        title: "登录",
+        url: "/loginpage",
       },
     ],
   },
   mainLinks: {
     fontStyle: {
-      fontColor: "#ffffff",
+      fontColor: "#0066ff",
       fontSize: "24px",
       textAlign: "left",
+      padding: "0.5rem 4rem",
     },
     items: [
       {
-        title: "title1",
+        title: "找大佬",
         url: "/",
       },
       {
@@ -115,7 +109,11 @@ class Navbar extends Component<object, NavbarInfo> {
    * @return {JSX.Element}
    */
   addTitle(): JSX.Element {
-    return <div style={this.state.title.style}>{this.state.title.content}</div>;
+    const Title = styled.div`
+      font-size: ${this.state.title.style.fontSize};
+      padding: 0 1rem;
+    `;
+    return <Title>{this.state.title.content}</Title>;
   }
   /**
    * @Description:
@@ -123,14 +121,11 @@ class Navbar extends Component<object, NavbarInfo> {
    * @Date: 2021-01-28 01:18:03
    * @LastEditTime: Do not edit
    * @LastEditors: Wang Wenzheng
-   * @param {object} items
-   * @param {object} fontStyle
+   * @param {LinkMenuItem[]} items
+   * @param {LinkMenuItemStyle} fontStyle
    * @return {JSX.Element}
    */
-  addMenu(
-    items: { title: string; url: string }[],
-    fontStyle: { fontSize: string; fontColor: string; textAlign: string }
-  ): JSX.Element {
+  addMenu(items: LinkMenuItem[], fontStyle: LinkMenuItemStyle): JSX.Element {
     return <LinkMenu items={items} fontStyle={fontStyle} />;
   }
 
@@ -144,6 +139,13 @@ class Navbar extends Component<object, NavbarInfo> {
    * @return {JSX.Element}
    */
   render(): JSX.Element {
+    const NavbarContainer = styled.div`
+      background: #fff;
+      color: #0066ff;
+      margin: 0 0 16px 0;
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.24);
+    `;
+
     //add a logo
     const logo = this.addLogo();
     //add a title
@@ -162,7 +164,7 @@ class Navbar extends Component<object, NavbarInfo> {
         <Row gutter={8} align="middle">
           <Col xs={{ span: 24 }} xl={{ span: 12 }}>
             <div>
-              <Row>
+              <Row align="middle">
                 <Col span={2}>{logo}</Col>
                 <Col span={22}>{title}</Col>
               </Row>
@@ -170,7 +172,7 @@ class Navbar extends Component<object, NavbarInfo> {
           </Col>
           <Col xs={{ span: 24 }} xl={{ span: 12 }}>
             <div>
-              <Row justify="end">
+              <Row justify="end" align="middle">
                 <Col span={24}>{subMenu}</Col>
               </Row>
             </div>

@@ -2,7 +2,7 @@
  * @Description:
  * @Author: Wang Wenzheng
  * @Date: 2021-01-22 18:51:00
- * @LastEditTime: 2021-01-23 17:00:48
+ * @LastEditTime: 2021-01-29 23:39:26
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\views\HomePage.tsx
  */
@@ -10,11 +10,10 @@
 import { Component } from "react";
 
 import { Button } from "antd";
-import { addStyle } from "../tools/AddAttribute";
 
 class HomePage extends Component {
   handleClick() {
-    addStyle("asd", "asd");
+    console.log("asd", "asd");
   }
   render() {
     return (

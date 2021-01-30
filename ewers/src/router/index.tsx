@@ -2,7 +2,7 @@
  * @Description: router of the SPA
  * @Author: Wang Wenzheng
  * @Date: 2021-01-22 23:17:19
- * @LastEditTime: 2021-01-23 13:15:52
+ * @LastEditTime: 2021-01-29 23:40:57
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\router\index.tsx
  */
@@ -11,7 +11,7 @@ import { createBrowserHistory } from "history";
 
 import { HomePage } from "../views/HomePage";
 import { PersonalPage } from "../views/PersonalPage";
-
+import { LoginPage } from "../views/LoginPage";
 const history = createBrowserHistory();
 /**
  * @Description:
@@ -28,6 +28,7 @@ const RouterConfig: React.FC<{}> = (): any => {
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
         <Route exact path="/personalpage" component={PersonalPage}></Route>
+        <Route exact path="/loginpage" component={LoginPage}></Route>
       </Switch>
     </Router>
   );
