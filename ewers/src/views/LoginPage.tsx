@@ -2,7 +2,7 @@
  * @Description: login page of the SPA
  * @Author: Wang Wenzheng
  * @Date: 2021-01-29 23:35:05
- * @LastEditTime: 2021-02-01 00:50:05
+ * @LastEditTime: 2021-02-03 01:45:01
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\views\LoginPage.tsx
  */
@@ -41,7 +41,7 @@ class LoginPage extends Component {
    * @param {string} password
    * @return {*}
    */
-  tyrLogin(username: string, password: string) {
+  tryLogin(username: string, password: string) {
     //todo: replace with real data
     console.log(username, password);
     if (username === "123" && password === "123") {
@@ -60,7 +60,7 @@ class LoginPage extends Component {
                   <PictureCarousel items={pics} />
                 </Col>
                 <Col xs={{ span: 24 }} xl={{ span: 8 }}>
-                  <LoginCard loginFunction={this.tyrLogin} />
+                  <LoginCard loginFunction={this.tryLogin} />
                 </Col>
               </Row>
             </Card>

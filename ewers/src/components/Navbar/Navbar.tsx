@@ -2,7 +2,7 @@
  * @Description: the nav of the SPA
  * @Author: Wang Wenzheng
  * @Date: 2021-01-23 12:43:16
- * @LastEditTime: 2021-01-29 23:41:45
+ * @LastEditTime: 2021-02-03 01:33:36
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\components\Navbar\Navbar.tsx
  */
@@ -11,6 +11,7 @@ import { Col, Row, Image } from "antd";
 import { Component } from "react";
 
 import styled from "styled-components";
+import { GLOBAL } from "../../global";
 import { LinkMenu } from "../Menu/LinkMenu";
 import { LinkMenuItem, LinkMenuItemStyle } from "../Menu/LinkMenuInterface";
 //import data structure
@@ -27,7 +28,7 @@ const navInfo: NavbarInfo = {
   },
   //* attributes of title
   title: {
-    content: "求大佬带",
+    content: GLOBAL.title,
     style: {
       fontSize: "2.5rem",
     },
