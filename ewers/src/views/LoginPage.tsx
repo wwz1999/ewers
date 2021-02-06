@@ -2,7 +2,7 @@
  * @Description: login page of the SPA
  * @Author: Wang Wenzheng
  * @Date: 2021-01-29 23:35:05
- * @LastEditTime: 2021-02-03 01:45:01
+ * @LastEditTime: 2021-02-03 23:59:31
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\views\LoginPage.tsx
  */
@@ -10,8 +10,16 @@ import { Card, Col, Row } from "antd";
 import { Component } from "react";
 import { LoginCard } from "../components/Card/LoginCard";
 import { PictureCarousel } from "../components/Carousel/PictureCarousel";
-import { PictureItem } from "../components/Carousel/PictureCarouselInterface";
-
+import {
+  PictureItem,
+  PictureStyle,
+} from "../components/Carousel/PictureCarouselInterface";
+const picStyle: PictureStyle = {
+  width: "100%",
+  height: "30rem",
+  color: "#000000",
+  fontSize: "1.5rem",
+};
 const pics: PictureItem[] = [
   {
     picUrl:
@@ -57,7 +65,7 @@ class LoginPage extends Component {
             <Card>
               <Row>
                 <Col xs={{ span: 0 }} xl={{ span: 16 }}>
-                  <PictureCarousel items={pics} />
+                  <PictureCarousel items={pics} style={picStyle} />
                 </Col>
                 <Col xs={{ span: 24 }} xl={{ span: 8 }}>
                   <LoginCard loginFunction={this.tryLogin} />

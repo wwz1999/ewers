@@ -2,7 +2,7 @@
  * @Description: the nav of the SPA
  * @Author: Wang Wenzheng
  * @Date: 2021-01-23 12:43:16
- * @LastEditTime: 2021-02-03 01:33:36
+ * @LastEditTime: 2021-02-06 23:51:57
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\components\Navbar\Navbar.tsx
  */
@@ -30,14 +30,14 @@ const navInfo: NavbarInfo = {
   title: {
     content: GLOBAL.title,
     style: {
-      fontSize: "2.5rem",
+      fontSize: "2rem",
     },
   },
   //* attributes of sublinks
   subLinks: {
     fontStyle: {
       fontColor: "#000000",
-      fontSize: "16px",
+      fontSize: "1rem",
       textAlign: "right",
       padding: "0.125rem 1rem",
     },
@@ -54,18 +54,18 @@ const navInfo: NavbarInfo = {
   },
   mainLinks: {
     fontStyle: {
-      fontColor: "#0066ff",
-      fontSize: "24px",
+      fontColor: "#000000",
+      fontSize: "1rem",
       textAlign: "left",
       padding: "0.5rem 4rem",
     },
     items: [
       {
-        title: "找大佬",
-        url: "/",
+        title: "找课程",
+        url: "/coursepage",
       },
       {
-        title: "title2",
+        title: "自由练习",
         url: "/personalpage",
       },
     ],
@@ -163,24 +163,24 @@ class Navbar extends Component<object, NavbarInfo> {
     return (
       <NavbarContainer>
         <Row gutter={8} align="middle">
-          <Col xs={{ span: 24 }} xl={{ span: 12 }}>
+          <Col xs={{ span: 24 }} xl={{ span: 6 }}>
             <div>
               <Row align="middle">
-                <Col span={2}>{logo}</Col>
-                <Col span={22}>{title}</Col>
+                <Col span={4}>{logo}</Col>
+                <Col span={20}>{title}</Col>
               </Row>
             </div>
           </Col>
           <Col xs={{ span: 24 }} xl={{ span: 12 }}>
+            {mainMenu}
+          </Col>
+          <Col xs={{ span: 24 }} xl={{ span: 6 }}>
             <div>
               <Row justify="end" align="middle">
                 <Col span={24}>{subMenu}</Col>
               </Row>
             </div>
           </Col>
-        </Row>
-        <Row>
-          <Col xs={{ span: 24 }}>{mainMenu}</Col>
         </Row>
       </NavbarContainer>
     );

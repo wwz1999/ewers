@@ -2,7 +2,7 @@
  * @Description: personal page of the SPA
  * @Author: Wang Wenzheng
  * @Date: 2021-01-22 21:51:05
- * @LastEditTime: 2021-01-29 19:56:45
+ * @LastEditTime: 2021-02-06 23:10:47
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\views\PersonalPage.tsx
  */
@@ -13,10 +13,10 @@ import { AvatarCard } from "../components/Card/AvatarCard";
 import { AvatarInfo } from "../components/Card/AvatarCardInterface";
 import { TabCard } from "../components/Card/TabCard";
 import { TabCardInfo } from "../components/Card/TabCardInterface";
-interface PersonalInfo {
+interface PersonalPageInfo {
   avatarInfo: AvatarInfo;
 }
-class PersonalPage extends Component<object, PersonalInfo> {
+class PersonalPage extends Component<object, PersonalPageInfo> {
   constructor(props: object) {
     super(props);
     this.state = {
@@ -73,8 +73,8 @@ class PersonalPage extends Component<object, PersonalInfo> {
     //add an tab card
     const tabCardInfo: TabCardInfo = {
       tabs: [
-        { key: "team", tab: "我的队伍" },
-        { key: "comment", tab: "我的评价" },
+        { key: "courses", tab: "我的课程" },
+        { key: "discuss", tab: "我的讨论" },
       ],
       dataGetter: (tabKey) => {
         return this.getTabContend(tabKey, this.state.avatarInfo.username);
