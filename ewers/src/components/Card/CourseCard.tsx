@@ -2,7 +2,7 @@
  * @Description: a card container of courses and links
  * @Author: Wang Wenzheng
  * @Date: 2021-02-06 23:40:46
- * @LastEditTime: 2021-02-07 00:20:27
+ * @LastEditTime: 2021-02-21 17:08:26
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\components\Card\CourseCard.tsx
  */
@@ -17,8 +17,9 @@ class CourseCard extends Component<CourseList, {}> {
     super(props);
     this.state = {};
   }
+
   joinCourse(url: string) {
-    jumpByPushTo(url);
+    jumpByPushTo("coursevideopage/" + url);
   }
   /**
    * @Description: make course item card

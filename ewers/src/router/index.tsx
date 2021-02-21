@@ -2,7 +2,7 @@
  * @Description: router of the SPA
  * @Author: Wang Wenzheng
  * @Date: 2021-01-22 23:17:19
- * @LastEditTime: 2021-02-06 23:51:31
+ * @LastEditTime: 2021-02-21 21:39:26
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\router\index.tsx
  */
@@ -13,7 +13,9 @@ import { HomePage } from "../views/HomePage";
 import { PersonalPage } from "../views/PersonalPage";
 import { LoginPage } from "../views/LoginPage";
 import { RegisterPage } from "../views/RegisterPage";
-import { CoursePage } from "../views/CoursePage";
+import { CourseTitlePage } from "../views/CourseTitlePage";
+import { CourseVideoPage } from "../views/CourseVideoPage";
+import { FreePracticePage } from "../views/FreePracticePage";
 const history = createBrowserHistory();
 /**
  * @Description:
@@ -29,8 +31,18 @@ const RouterConfig: React.FC<{}> = (): any => {
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/coursepage" component={CoursePage}></Route>
+        <Route
+          exact
+          path="/coursetitlepage"
+          component={CourseTitlePage}
+        ></Route>
+        <Route
+          exact
+          path="/coursevideopage/:courseTitle"
+          component={CourseVideoPage}
+        ></Route>
         <Route exact path="/personalpage" component={PersonalPage}></Route>
+        <Route exact path="/freepracticepage" component={FreePracticePage}></Route>
         <Route exact path="/loginpage" component={LoginPage}></Route>
         <Route exact path="/registerpage" component={RegisterPage}></Route>
       </Switch>

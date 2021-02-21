@@ -2,11 +2,11 @@
  * @Description: interfaces needed in linkmenu
  * @Author: Wang Wenzheng
  * @Date: 2021-01-28 19:42:23
- * @LastEditTime: 2021-01-29 21:35:40
+ * @LastEditTime: 2021-02-21 20:08:33
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\components\Menu\LinkMenuInterface.tsx
  */
-export interface LinkMenuItem {
+export interface MenuItem {
   title: string;
   url: string;
 }
@@ -17,6 +17,6 @@ export interface LinkMenuItemStyle {
   padding: string;
 }
 export interface LinkMenuInfo {
-  items: LinkMenuItem[];
+  items: MenuItem[];
   fontStyle: LinkMenuItemStyle;
 }

@@ -2,7 +2,7 @@
  * @Description: the nav of the SPA
  * @Author: Wang Wenzheng
  * @Date: 2021-01-23 12:43:16
- * @LastEditTime: 2021-02-06 23:51:57
+ * @LastEditTime: 2021-02-21 21:39:50
  * @LastEditors: Wang Wenzheng
  * @FilePath: \ewers\src\components\Navbar\Navbar.tsx
  */
@@ -13,7 +13,7 @@ import { Component } from "react";
 import styled from "styled-components";
 import { GLOBAL } from "../../global";
 import { LinkMenu } from "../Menu/LinkMenu";
-import { LinkMenuItem, LinkMenuItemStyle } from "../Menu/LinkMenuInterface";
+import { MenuItem, LinkMenuItemStyle } from "../Menu/LinkMenuInterface";
 //import data structure
 import { NavbarInfo } from "./NavbarInterface";
 
@@ -62,11 +62,11 @@ const navInfo: NavbarInfo = {
     items: [
       {
         title: "找课程",
-        url: "/coursepage",
+        url: "/coursetitlepage",
       },
       {
         title: "自由练习",
-        url: "/personalpage",
+        url: "/freepracticepage",
       },
     ],
   },
@@ -126,7 +126,7 @@ class Navbar extends Component<object, NavbarInfo> {
    * @param {LinkMenuItemStyle} fontStyle
    * @return {JSX.Element}
    */
-  addMenu(items: LinkMenuItem[], fontStyle: LinkMenuItemStyle): JSX.Element {
+  addMenu(items: MenuItem[], fontStyle: LinkMenuItemStyle): JSX.Element {
     return <LinkMenu items={items} fontStyle={fontStyle} />;
   }
 

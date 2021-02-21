@@ -2,9 +2,9 @@
  * @Description: course page of the iq tax children program
  * @Author: Wang Wenzheng
  * @Date: 2021-02-06 23:20:00
- * @LastEditTime: 2021-02-07 00:20:55
+ * @LastEditTime: 2021-02-21 17:01:21
  * @LastEditors: Wang Wenzheng
- * @FilePath: \ewers\src\views\CoursePage.tsx
+ * @FilePath: \ewers\src\views\CourseTitlePage.tsx
  */
 import { Component } from "react";
 import { CourseCard } from "../components/Card/CourseCard";
@@ -18,7 +18,7 @@ const courses: CourseList[] = [
     content: [
       {
         label: "不会还有人不会python吧",
-        url: "http://www.baidu.com",
+        url: "pythonbasic",
       },
       {
         label: "python还用学？",
@@ -46,7 +46,7 @@ const courses: CourseList[] = [
 ];
 //todo: get  courses by request to make it OCP
 
-class CoursePage extends Component<object, CoursePageInfo> {
+class CourseTitlePage extends Component<object, CoursePageInfo> {
   constructor(props: object) {
     super(props);
     this.state = {
@@ -87,4 +87,4 @@ class CoursePage extends Component<object, CoursePageInfo> {
   }
 }
 
-export { CoursePage };
+export { CourseTitlePage };
